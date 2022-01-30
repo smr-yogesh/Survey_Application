@@ -1,0 +1,55 @@
+﻿<Window x:Class="Survey_Application.ManagerAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Survey_Application"
+        mc:Ignorable="d"
+        Title="Manager Account" Height="593" Width="892">
+    <Grid x:Name="manager_account_Grid" Margin="0,0,4,1">
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="398,44,0,0" TextWrapping="Wrap" Text="Welcome Manager" VerticalAlignment="Top" Width="113" FontWeight="Bold"/>
+        <Grid x:Name="loggedInManager_grid" HorizontalAlignment="Left" Height="357" Margin="52,120,0,0" VerticalAlignment="Top" Width="673" Visibility="Visible">
+            <Grid x:Name="Buttons_Grid" HorizontalAlignment="Left" Height="357" Margin="238,0,0,0" VerticalAlignment="Top" Width="236">
+                <Button x:Name="Check_survey" Content="Check Survey" HorizontalAlignment="Left" Margin="31,261,0,0" VerticalAlignment="Top" Width="170" Height="50" Click="Check_survey_Click"/>
+                <Button x:Name="Create_Survey" Content="Create Survey" HorizontalAlignment="Left" Margin="31,181,0,0" VerticalAlignment="Top" Width="170" Height="50" Click="Create_Survey_Click"/>
+                <Button x:Name="Create_Respondent_button" Content="Create Respondent" HorizontalAlignment="Left" Margin="31,34,0,0" VerticalAlignment="Top" Width="170" Height="50" Click="Create_Respondent_button_Click"/>
+                <Button x:Name="responder_s_list" Content="Show responder's IDs" HorizontalAlignment="Left" Margin="31,104,0,0" VerticalAlignment="Top" Width="170" Height="50" Click="Responder_s_list_Click"/>
+            </Grid>
+            <Grid x:Name="responder_grid" HorizontalAlignment="Left" Height="291" Margin="456,0,0,0" VerticalAlignment="Top" Width="217" Visibility="Visible" >
+                <ListBox x:Name="Responder_list" HorizontalAlignment="Left" Height="190" Margin="36,56,0,0" VerticalAlignment="Top" Width="155" SelectionChanged="resp_id_SelectionChanged"/>
+                <Label x:Name="Responders_ids" Content="Available Responder IDs" HorizontalAlignment="Left" Margin="27,25,0,0" VerticalAlignment="Top" Width="140"/>
+            </Grid>
+            <Grid x:Name="survey_grid" HorizontalAlignment="Left" Height="311" Margin="479,10,0,0" VerticalAlignment="Top" Width="173" Visibility="Visible">
+                <ListBox x:Name="Survey_list" HorizontalAlignment="Left" Height="190" Margin="10,47,0,0" VerticalAlignment="Top" Width="153"/>
+                <Label Content="Available Surveys" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="113"/>
+                <Button x:Name="Survey_select" Content="Select" HorizontalAlignment="Left" Margin="25,258,0,0" VerticalAlignment="Top" Width="115" Click="Survey_select_Click"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="information_grid" HorizontalAlignment="Left" Height="454" Margin="10,74,-31,0" VerticalAlignment="Top" Width="859" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="193*"/>
+                <ColumnDefinition Width="272*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="Questions_list" HorizontalAlignment="Left" Height="329" Margin="10,66,0,0" VerticalAlignment="Top" Width="273" SelectionChanged="Questions_list_SelectionChanged"/>
+            <Label Content="Questions" HorizontalAlignment="Left" Height="30" Margin="10,31,0,0" VerticalAlignment="Top" Width="77" FontWeight="Bold" FontSize="14"/>
+            <Label Content="Answers" HorizontalAlignment="Left" Margin="77,32,0,0" VerticalAlignment="Top" Width="148" FontWeight="Bold" FontSize="14" Grid.Column="1"/>
+            <Button x:Name="previous" Content="Previous" HorizontalAlignment="Left" Margin="311,154,0,0" VerticalAlignment="Top" Width="90" Click="previous_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="Next" Content="Next" HorizontalAlignment="Left" Margin="311,258,0,0" VerticalAlignment="Top" Width="90" Click="Next_Click" Grid.ColumnSpan="2"/>
+            <Button x:Name="Done_button" Content="Back" HorizontalAlignment="Left" Margin="33,415,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Click="Done_button_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.383"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button x:Name="Show_answers" Grid.ColumnSpan="2" Content="Show answers" HorizontalAlignment="Left" Margin="311,204,0,0" VerticalAlignment="Top" Width="90" Click="Show_answers_Click"/>
+            <ListBox x:Name="answerbox" Grid.Column="1" HorizontalAlignment="Left" Height="329" Margin="77,66,0,0" VerticalAlignment="Top" Width="336"/>
+
+        </Grid>
+        <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="698,528,0,0" VerticalAlignment="Top" Width="81" Click="Logout_Click"/>
+
+    </Grid>
+</Window>
